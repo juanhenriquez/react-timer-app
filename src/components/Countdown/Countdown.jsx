@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+import Clock from './../Clock/Clock';
+
+import './countdown.scss';
+
 class Countdown extends Component {
   constructor(props) {
     super(props);
@@ -7,7 +11,9 @@ class Countdown extends Component {
 
   render() {
     return (
-      <h1>Countdown.jsx</h1>
+      <div className="countdown-container">
+        <Clock totalSeconds={129}/>
+      </div>
     );
   }
 }

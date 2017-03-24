@@ -2,12 +2,13 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 
 // components
-import Timer from './Timer';
-import Countdown from './Countdown';
-import Navigation from './Navigation';
-import Sidenav from './Sidenav';
+import Timer from './../Timer/Timer';
+import Countdown from './../Countdown/Countdown';
+import Navigation from './../Navigation/Navigation';
+import Sidenav from './../Sidenav/Sidenav';
 import RaisedButton from 'material-ui/RaisedButton';
-import '../../styles/index.scss';
+
+import './app.scss';
 
 class App extends Component {
 
@@ -26,7 +27,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="app-container">
         <Navigation toggleDrawer={this.toggleDrawer}/>
         <Sidenav isDrawerOpen={ this.state.isDrawerOpen } toggleDrawer={this.toggleDrawer}/>
 

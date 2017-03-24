@@ -6,6 +6,7 @@
     browser: true
     node: true
     es6: true
+    mocha: true
 
   parser: "babel-eslint"
 
@@ -34,7 +35,7 @@
     camelcase: 0
     no-spaced-func: 1
     no-alert: 1
-    
+
     comma-spacing: 1
     eqeqeq: 1
 

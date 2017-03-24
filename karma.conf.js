@@ -3,11 +3,11 @@ var webpackConfig = require('./webpack.config');
 module.exports = function (config) {
   config.set({
     browsers: ['Chrome'],
-    singleRun: true,
+    singleRun: false,
     frameworks: ['mocha'],
-    files: ['src/tests/**/*.test.jsx'],
+    files: ['src/components/**/*.test.jsx'],
     preprocessors: {
-      'src/tests/**/*.test.jsx': ['webpack', 'sourcemap']
+      'src/components/**/*.test.jsx': ['webpack', 'sourcemap']
     },
     reporters: ['mocha'],
     client: {

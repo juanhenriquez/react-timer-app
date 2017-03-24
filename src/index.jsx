@@ -9,14 +9,15 @@ import {
 import { AppContainer } from 'react-hot-loader';
 
 // components
-import App from './components/App.jsx';
-import Timer from './components/Timer';
-import Countdown from './components/Countdown';
+import App from './components/App/App.jsx';
 
 // third party libraries
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import theme from './theme';
+
+import '../styles/index.scss';
+
 
 injectTapEventPlugin();
 render(
@@ -31,8 +32,8 @@ render(
 );
 
 if (module && module.hot) {
-  module.hot.accept('./components/App.jsx', () => {
-    const App = require('./components/App.jsx').default;
+  module.hot.accept('./components/App/App.jsx', () => {
+    const App = require('./components/App/App.jsx').default;
     render(
       <AppContainer>
         <App/>
