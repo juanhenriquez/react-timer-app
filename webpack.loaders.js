@@ -2,8 +2,16 @@ module.exports = [
 	{
 		test: /\.jsx?$/,
 		exclude: /(node_modules|bower_components|public\/)/,
-		loader: "babel-loader"
+		loader: "babel-loader",
+    query: {
+      presets: ['react']
+    }
 	},
+  {
+	  test: /\.css$/,
+	  loaders: ['style-loader', 'css-loader?importLoaders=1'],
+	  exclude: ['node_modules']
+  },
 	{
 		test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
 		exclude: /(node_modules|bower_components)/,
