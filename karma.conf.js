@@ -1,5 +1,11 @@
 var webpackConfig = require('./webpack.config');
 
+webpackConfig.externals = {
+  'react/addons': true,
+  'react/lib/ExecutionEnvironment': true,
+  'react/lib/ReactContext': true
+};
+
 module.exports = function (config) {
   config.set({
     browsers: ['Chrome'],

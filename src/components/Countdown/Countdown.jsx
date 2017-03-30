@@ -8,11 +8,33 @@ import './countdown.scss';
 class Countdown extends Component {
   constructor(props) {
     super(props);
-    this.state = { count: 0 };
+    this.state = { 
+      count: 0,
+      countdownStatus: 'stopped'
+    };
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.countdownStatus !== prevState.countdownStatus) {
+      switch(this.state.countdownStatus) {
+        case 'started':
+          this.startTimer();
+          break;
+      }
+    }
+  }
+
+  startTimer() {
+    this.timer = setInterval(() => {
+      let newCount = this.state.count - 1;
+      this.setState({ 
+        count: newCount >= 0 ? newCount : 0 
+      });
+    }, 1000);
   }
 
   handleSetCountdown = (seconds) => {
-    this.setState({ count: seconds });
+    this.setState({ count: seconds, countdownStatus: 'started' });
   };
 
   handleSetSeconds = (e) => {
