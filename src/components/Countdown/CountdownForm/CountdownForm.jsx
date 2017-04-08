@@ -6,7 +6,7 @@ import './CountdownForm.scss';
 
 const CountdownForm = (props) => {
   return (
-    <form onSubmit={ props.onSetSeconds } className="countdown-form">
+    <form onSubmit={ props.onSetSeconds } className="countdown-form" autoComplete="off">
       <TextField hintText="Enter time in seconds" fullWidth={true} name="seconds"/>
       <RaisedButton type="submit" label="Start" fullWidth={true} secondary={true}/>
     </form>
