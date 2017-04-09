@@ -59,12 +59,18 @@ describe('Countdown', () => {
   });
 
   describe('handleStatusChange', () => {
-    it('should pause the countdown when pass paused to handleStatusChange ', () => {
+    it('should pause the countdown when pass paused to handleStatusChange ', (done) => {
       const wrapper = shallow(<Countdown />);
       const component = wrapper.instance();
-
+      
+      component.handleSetCountdown(3);
       component.handleStatusChange('paused');
-      expect(component.state.countdownStatus).toBe('paused');
+
+      setTimeout(() => {
+        expect(component.state.count).toBe(3);
+        expect(component.state.countdownStatus).toBe('paused');
+        done()
+      }, 1001);
     });
 
     it('should start the countdown when pass started to handleStatusChange ', () => {
@@ -75,12 +81,18 @@ describe('Countdown', () => {
       expect(component.state.countdownStatus).toBe('started');
     });
 
-    it('should stop the countdown when pass stopped to handleStatusChange ', () => {
+    it('should stop the countdown when pass stopped to handleStatusChange ', (done) => {
       const wrapper = shallow(<Countdown />);
       const component = wrapper.instance();
 
+      component.handleSetCountdown(3);
       component.handleStatusChange('stopped');
-      expect(component.state.countdownStatus).toBe('stopped');
+
+      setTimeout(() => {
+        expect(component.state.count).toBe(0);
+        expect(component.state.countdownStatus).toBe('stopped');
+        done();
+      }, 1001);
     });
 
     it('should render the CountdownForm component when the countdownStatus is "stopped"', () => {
