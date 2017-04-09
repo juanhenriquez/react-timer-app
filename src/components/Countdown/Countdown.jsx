@@ -15,7 +15,20 @@ class Countdown extends Component {
     };
   }
 
+  componentWillMount () {
+    console.log('Mount Component');
+  }
+
+  componentDidMount () {
+    console.log('Finish Component Mounting');
+  }
+
+  componentWillUpdate (nextProps, nextState) {
+    console.log('The component will be updated');
+  }
+
   componentDidUpdate(prevProps, prevState) {
+    console.log('The component has been updated');
     if (this.state.countdownStatus !== prevState.countdownStatus) {
       switch(this.state.countdownStatus) {
         case 'started':
@@ -31,6 +44,12 @@ class Countdown extends Component {
     }
   };
 
+  componentWillUnmount () {
+    console.log("Remove component");
+    clearInterval(this.timer);
+    this.timer = undefined;
+  }
+
   handleStatusChange = (newStatus) => {
     this.setState({
       countdownStatus: newStatus
@@ -43,6 +62,11 @@ class Countdown extends Component {
       this.setState({ 
         count: newCount >= 0 ? newCount : 0 
       });
+
+      if (newCount === 0) {
+        this.setState({ countdownStatus: 'stopped' });
+      }
+
     }, 1000);
   };
 
