@@ -19,7 +19,7 @@ describe('Controls', () => {
       const spy = expect.createSpy();
       const wrapper = mount(
         <MuiThemeProvider>
-          <Controls countdownStatus="started" onHandleStatusChange={ spy }/>
+          <Controls countStatus="started" onHandleStatusChange={ spy }/>
         </MuiThemeProvider>
       );
       expect(wrapper.text()).toBe('PauseClear');
@@ -29,7 +29,7 @@ describe('Controls', () => {
       const spy = expect.createSpy();
       const wrapper = mount(
         <MuiThemeProvider>
-          <Controls countdownStatus="paused" onHandleStatusChange={ spy }/>
+          <Controls countStatus="paused" onHandleStatusChange={ spy }/>
         </MuiThemeProvider>
       );
       
@@ -42,7 +42,7 @@ describe('Controls', () => {
       const spy = expect.createSpy();
       const wrapper = mount(
         <MuiThemeProvider>
-          <Controls countdownStatus="paused" onHandleStatusChange={ spy }/>
+          <Controls countStatus="paused" onHandleStatusChange={ spy }/>
         </MuiThemeProvider>
       );
 
@@ -56,7 +56,7 @@ describe('Controls', () => {
       const spy = expect.createSpy();
       const wrapper = mount(
         <MuiThemeProvider>
-          <Controls countdownStatus="started" onHandleStatusChange={ spy }/>
+          <Controls countStatus="started" onHandleStatusChange={ spy }/>
         </MuiThemeProvider>
       );
 
@@ -70,7 +70,7 @@ describe('Controls', () => {
       const spy = expect.createSpy();
       const wrapper = mount(
         <MuiThemeProvider>
-          <Controls countdownStatus="paused" onHandleStatusChange={ spy }/>
+          <Controls countStatus="paused" onHandleStatusChange={ spy }/>
         </MuiThemeProvider>
       );
 

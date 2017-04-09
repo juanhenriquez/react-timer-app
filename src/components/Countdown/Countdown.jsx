@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import Clock from './Clock/Clock';
+import Clock from './../Clock/Clock';
 import CountdownForm from './CountdownForm/CountdownForm';
-import Controls from './Controls/Controls';
+import Controls from './../Controls/Controls';
 
 import './countdown.scss';
 
@@ -87,7 +87,7 @@ class Countdown extends Component {
     const renderControlsComponent = () => {
       if (countdownStatus !== 'stopped') {
         return (
-          <Controls onHandleStatusChange={ this.handleStatusChange } countdownStatus={ countdownStatus }/>
+          <Controls onHandleStatusChange={ this.handleStatusChange } countStatus={ countdownStatus }/>
         );
       } else {
         return <CountdownForm onSetSeconds={ this.handleSetSeconds }/>;

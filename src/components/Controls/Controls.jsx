@@ -4,10 +4,10 @@ import RaisedButton from 'material-ui/RaisedButton';
 import './Controls.scss';
 
 const Controls = (props) => {
-  let { countdownStatus, onHandleStatusChange } = props;
+  let { countStatus, onHandleStatusChange } = props;
   
   const renderStartStopButton = () => {
-    if (countdownStatus === 'started') {
+    if (countStatus === 'started') {
       return (
         <RaisedButton 
           id="pause-button"
@@ -16,7 +16,7 @@ const Controls = (props) => {
           primary={true} 
           onClick={ (e) => onHandleStatusChange('paused') }/>
       );
-    } else if (countdownStatus === 'paused') {
+    } else {
       return (
         <RaisedButton 
           id="start-button"
@@ -41,7 +41,7 @@ const Controls = (props) => {
 };
 
 Controls.propTypes = {
-  countdownStatus: React.PropTypes.string.isRequired,
+  countStatus: React.PropTypes.string.isRequired,
   onHandleStatusChange: React.PropTypes.func.isRequired
 };
 

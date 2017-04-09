@@ -5,7 +5,7 @@ import { shallow, mount } from 'enzyme';
 
 import Countdown from './Countdown';
 import CountdownForm from './CountdownForm/CountdownForm';
-import Controls from './Controls/Controls';
+import Controls from './../Controls/Controls';
 
 describe('Countdown', () => {
   it('should exist', () => {
