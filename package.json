@@ -5,7 +5,8 @@
   "main": "''",
   "scripts": {
     "build": "webpack --config webpack.production.config.js --progress --profile --colors",
-    "start": "webpack-dev-server --progress --profile --colors",
+    "startDev": "webpack-dev-server --progress --profile --colors",
+    "start": "node server.js",
     "lint": "eslint --ext js --ext jsx src || exit 0",
     "dev": " webpack-dashboard -- webpack-dev-server --progress --profile --colors",
     "test": "karma start --auto-watch"
